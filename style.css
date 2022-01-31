@@ -1,0 +1,60 @@
+body {
+    background-color: rgb(230, 123, 36);
+    color: blue;
+}
+
+.main-container {
+    display: flex;
+    flex-grow: 1;
+    height: 98vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(20, 11, 11);
+}
+
+#button-container {
+    display: flex;
+    background-color: lightgrey;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: white;
+}
+.box:hover {
+    background-color: white;
+}
+button {
+    background-color: rgb(230, 123, 36);
+    border-color: lightgreen;
+    height: 4em;
+}
+.outer-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 700px;
+    width: 700px;
+}
+
+.row-one {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-content: stretch;
+    background-color: darkgray;
+    gap: 0;
+
+}
+
+.square {
+    background-color: beige;
+    justify-content: stretch;
+    width: 100%;
+}
+
+.square:hover {
+    background-color: rgb(230, 123, 36);
+}

@@ -55,6 +55,6 @@ button {
     width: 100%;
 }
 
-.square:hover {
+.colored:hover {
     background-color: rgb(230, 123, 36);
 }

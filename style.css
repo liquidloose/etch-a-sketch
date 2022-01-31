@@ -58,3 +58,7 @@ button {
 .colored:hover {
     background-color: rgb(230, 123, 36);
 }
+
+.colors {
+    background-color: rgb(230, 123, 36);
+}

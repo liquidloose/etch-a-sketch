@@ -39,7 +39,7 @@ button {
     width: 700px;
 }
 
-.row-one {
+.row {
     display: flex;
     flex-grow: 1;
     justify-content: space-around;

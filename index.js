@@ -9,7 +9,7 @@ function addColor() {
 }
 
 function resetButton() {
-  const button = document.querySelector('button');
+  const button = document.querySelector('#reset');
 
   button.addEventListener('click', () => {
     const remove = document.querySelectorAll('.square');
@@ -23,7 +23,7 @@ const size = 50;
 
 function createRows() {
   for (let i = 0; i < size; i += 1) {
-    const target = document.querySelector('.outer-container');
+    const target = document.querySelector('#outer-container');
     const div = document.createElement('div');
     div.classList.add('row');
 

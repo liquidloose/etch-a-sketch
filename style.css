@@ -1,6 +1,5 @@
 body {
     background-color: rgb(230, 123, 36);
-    color: blue;
 }
 
 #main-container {
@@ -23,7 +22,7 @@ body {
     box-shadow: 20px 20px 30px 10px rgb(230, 123, 36) inset;
     background-color: lightgray;
     border-radius: 25px;
-    width: 30%
+    width: 28%
 }
 
 #reset {
@@ -37,7 +36,6 @@ body {
 
 #button-container {
     display: flex;
-    background-color: lightgrey;
     justify-content: center;
     background-color: lightgray;
     box-shadow: lightgray;
@@ -46,18 +44,7 @@ body {
     border-width: 5px;
     border-radius: 25px;
 }
-/*
-.slider {
-    display: flex;
-    color: black;
-    background-color: rgb(230, 123, 36);
-    border-color: black;
-    align-items: stretch;
-    border-style: solid;
-    border-width:2px;
-    
-}
-*/
+
 
 .slider {
     -webkit-appearance: none;
@@ -104,13 +91,20 @@ button {
     border-color: black;
     height: 4em;
 }
+
+.square {
+    justify-content: stretch;
+    width: 100%;
+    background-color: beige;
+}
+
+
 #outer-container {
     display: flex;
     flex-direction: column;
-    background-color: white;
     height: 600px;
     width: 600px;
-    border-radius: 25px;
+    background-color: rgb(189, 189, 55);
 }
 
 .row {
@@ -123,16 +117,10 @@ button {
 
 }
 
-.square {
-    background-color: beige;
-    justify-content: stretch;
-    width: 100%;
-}
-
-.colored:hover {
+.color-orange {
     background-color: rgb(230, 123, 36);
 }
 
-.colors {
-    background-color: rgb(230, 123, 36);
+.color-black {
+    background-color: rgb(20, 11, 11);
 }

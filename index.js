@@ -1,25 +1,32 @@
-function addColor() {
+const size = 10;
+
+function addColor(color) {
   const target = document.querySelectorAll('.square');
 
   target.forEach((item) => {
     item.addEventListener('mouseover', () => {
-      item.classList.add('colors');
+      console.log(`this is the current color: ${color}`);
     });
   });
 }
 
 function resetButton() {
-  const button = document.querySelector('#reset');
+  const reset = document.querySelector('#reset');
 
-  button.addEventListener('click', () => {
+  reset.addEventListener('click', () => {
     const remove = document.querySelectorAll('.square');
     remove.forEach((item) => {
-      item.classList.remove('colors');
+      item.classList.remove('color-black');
+      item.classList.remove('color-orange');
     });
   });
 }
-
-const size = 50;
+function blackButton() {
+  const targetBlack = document.querySelector('#black');
+  const black = 'color-black';
+  targetBlack.addEventListener('click', addColor(black));
+  targetBlack.removeEventListener('click', addColor(black));
+}
 
 function createRows() {
   for (let i = 0; i < size; i += 1) {
@@ -28,16 +35,7 @@ function createRows() {
     div.classList.add('row');
 
     target.appendChild(div);
-    console.log(i);
   }
-}
-
-function addClass() {
-  const content = document.querySelectorAll('.row');
-  content.forEach((item) => {
-    item.classList.add('colors');
-    console.log(item);
-  });
 }
 
 function fillRows() {
@@ -48,12 +46,16 @@ function fillRows() {
       squares.classList.add('square');
       item.appendChild(squares);
     }
-    console.log(rows[item]);
   });
 }
 
-createRows();
-addClass();
-fillRows();
-addColor();
-resetButton();
+function startDrawing() {
+  const defaultColor = 'color-orange';
+  createRows();
+  fillRows();
+  addColor(defaultColor);
+  blackButton();
+  resetButton();
+}
+
+startDrawing();

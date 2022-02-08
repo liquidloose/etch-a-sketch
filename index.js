@@ -1,11 +1,19 @@
-const size = 10;
-
+/* eslint-disable no-param-reassign */
+const size = 50;
+function randomColor() {
+  const random = Math.floor(Math.random() * 16777215).toString(16);
+  return random;
+}
 function addColor(color) {
   const target = document.querySelectorAll('.square');
 
   target.forEach((item) => {
     item.addEventListener('mouseover', () => {
-      console.log(`this is the current color: ${color}`);
+      if (color === 'orange' || color === 'black') {
+        item.style.backgroundColor = color;
+      } else if (color === 'rainbow') {
+        item.style.backgroundColor = randomColor();
+      }
     });
   });
 }
@@ -16,16 +24,26 @@ function resetButton() {
   reset.addEventListener('click', () => {
     const remove = document.querySelectorAll('.square');
     remove.forEach((item) => {
-      item.classList.remove('color-black');
-      item.classList.remove('color-orange');
+      item.style.backgroundColor = 'beige';
     });
   });
 }
-function blackButton() {
-  const targetBlack = document.querySelector('#black');
-  const black = 'color-black';
-  targetBlack.addEventListener('click', addColor(black));
-  targetBlack.removeEventListener('click', addColor(black));
+function bindButtons() {
+  const buttons = document.querySelectorAll('#black , #orange, #rainbow, #reset');
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (button.id === 'black') {
+        addColor('black');
+      } else if (button.id === 'orange') {
+        addColor('orange');
+      } else if (button.id === 'rainbow') {
+        addColor('rainbow');
+      } else if (button.id === 'reset') {
+        resetButton();
+        addColor('orange');
+      }
+    });
+  });
 }
 
 function createRows() {
@@ -33,7 +51,6 @@ function createRows() {
     const target = document.querySelector('#outer-container');
     const div = document.createElement('div');
     div.classList.add('row');
-
     target.appendChild(div);
   }
 }
@@ -50,11 +67,10 @@ function fillRows() {
 }
 
 function startDrawing() {
-  const defaultColor = 'color-orange';
   createRows();
   fillRows();
-  addColor(defaultColor);
-  blackButton();
+  addColor('orange');
+  bindButtons();
   resetButton();
 }
 

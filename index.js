@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-const size = 50;
+const size = 20;
 function randomColor() {
   const random = Math.floor(Math.random() * 16777215).toString(16);
   return random;
@@ -66,6 +66,13 @@ function fillRows() {
   });
 }
 
+function slider() {
+  const i = document.querySelector('input');
+  i.addEventListener('input', () => {
+    console.log(i.value);
+  });
+}
+
 function startDrawing() {
   createRows();
   fillRows();
@@ -73,5 +80,5 @@ function startDrawing() {
   bindButtons();
   resetButton();
 }
-
+slider();
 startDrawing();

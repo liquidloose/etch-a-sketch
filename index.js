@@ -1,13 +1,13 @@
 /* eslint-disable no-param-reassign */
 let size = 5;
-console.log(`This is the initial size: ${size.value}`);
+
 function randomColor() {
   const random = Math.floor(Math.random() * 16777215).toString(16);
   return random;
 }
+
 function addColor(color) {
   const target = document.querySelectorAll('.square');
-
   target.forEach((item) => {
     item.addEventListener('mouseover', () => {
       if (color === 'orange' || color === 'rgb(20, 11, 11)') {
@@ -29,6 +29,7 @@ function resetButton() {
     });
   });
 }
+
 function bindButtons() {
   const buttons = document.querySelectorAll('#black , #orange, #rainbow, #reset');
   buttons.forEach((button) => {
@@ -55,12 +56,14 @@ function createRows() {
     target.appendChild(div);
   }
 }
+
 function delRows() {
   const rows = document.querySelectorAll('.row');
   rows.forEach((item) => {
     item.remove();
   });
 }
+
 function fillRows() {
   const rows = document.querySelectorAll('.row');
   rows.forEach((item) => {

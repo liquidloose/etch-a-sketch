@@ -85,7 +85,7 @@ function startDrawing() {
 
 function sliderStop() {
   const i = document.querySelector('input');
-  console.log(i.value);
+  console.log(i.value); /* this is the size of the grid */
   size = i.value;
   delRows();
   startDrawing();

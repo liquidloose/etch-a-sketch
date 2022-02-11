@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
-const size = 20;
+let size = 5;
+console.log(`This is the initial size: ${size.value}`);
 function randomColor() {
   const random = Math.floor(Math.random() * 16777215).toString(16);
   return random;
@@ -9,7 +10,7 @@ function addColor(color) {
 
   target.forEach((item) => {
     item.addEventListener('mouseover', () => {
-      if (color === 'orange' || color === 'black') {
+      if (color === 'orange' || color === 'rgb(20, 11, 11)') {
         item.style.backgroundColor = color;
       } else if (color === 'rainbow') {
         item.style.backgroundColor = randomColor();
@@ -33,7 +34,7 @@ function bindButtons() {
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
       if (button.id === 'black') {
-        addColor('black');
+        addColor('rgb(20, 11, 11)');
       } else if (button.id === 'orange') {
         addColor('orange');
       } else if (button.id === 'rainbow') {
@@ -54,7 +55,12 @@ function createRows() {
     target.appendChild(div);
   }
 }
-
+function delRows() {
+  const rows = document.querySelectorAll('.row');
+  rows.forEach((item) => {
+    item.remove();
+  });
+}
 function fillRows() {
   const rows = document.querySelectorAll('.row');
   rows.forEach((item) => {
@@ -66,13 +72,6 @@ function fillRows() {
   });
 }
 
-function slider() {
-  const i = document.querySelector('input');
-  i.addEventListener('input', () => {
-    console.log(i.value);
-  });
-}
-
 function startDrawing() {
   createRows();
   fillRows();
@@ -80,5 +79,20 @@ function startDrawing() {
   bindButtons();
   resetButton();
 }
-slider();
+
+function sliderStop() {
+  const i = document.querySelector('input');
+  console.log(i.value);
+  size = i.value;
+  delRows();
+  startDrawing();
+}
+
+function slider() {
+  const i = document.querySelector('input');
+  i.addEventListener('mouseup', sliderStop);
+  size = i.value;
+}
+
 startDrawing();
+slider();
